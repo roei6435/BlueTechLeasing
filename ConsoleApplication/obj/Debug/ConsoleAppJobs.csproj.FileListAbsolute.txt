@@ -1,9 +1,0 @@
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\bin\Debug\ConsoleAppTest.exe.config
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\bin\Debug\ConsoleAppTest.exe
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\bin\Debug\ConsoleAppTest.pdb
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\bin\Debug\System.Spatial.dll
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\obj\Debug\ConsoleAppJobs.csproj.AssemblyReference.cache
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\obj\Debug\ConsoleAppJobs.csproj.CoreCompileInputs.cache
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\obj\Debug\ConsoleAppJobs.csproj.CopyComplete
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\obj\Debug\ConsoleAppTest.exe
-C:\Users\roei6\Desktop\LeasingCRM\ConsoleApplication\obj\Debug\ConsoleAppTest.pdb

@@ -1,0 +1,1097 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xrm.Sdk.Async</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xrm.Sdk.Async.AsyncCallOperation`1">
+            <summary>
+            Allows to do retry on failures and to cancel an operation
+            </summary>
+            <typeparam name="T">Result type of the operation</typeparam>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService">
+            <summary>Provides programmatic access to the metadata and data for an organization.</summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService.CreateAsync(Microsoft.Xrm.Sdk.Entity,System.Threading.CancellationToken)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService.RetrieveAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet,System.Threading.CancellationToken)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService.UpdateAsync(Microsoft.Xrm.Sdk.Entity,System.Threading.CancellationToken)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService.DeleteAsync(System.String,System.Guid,System.Threading.CancellationToken)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService.ExecuteAsync(Microsoft.Xrm.Sdk.OrganizationRequest,System.Threading.CancellationToken)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService.RetrieveMultipleAsync(Microsoft.Xrm.Sdk.Query.QueryBase,System.Threading.CancellationToken)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService.AssociateAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.Threading.CancellationToken)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService.DisassociateAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.Threading.CancellationToken)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions">
+            <summary>
+            Extensions methods for the IOrganizationService interface
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.ToAsyncService(Microsoft.Xrm.Sdk.IOrganizationService)">
+            <summary>
+            Converts to asynchronous version of the service (if possible)
+            </summary>
+            <param name="service">The synchronous service</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.CreateAsync(Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Entity,System.Threading.CancellationToken)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.UpdateAsync(Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Entity,System.Threading.CancellationToken)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.DeleteAsync(Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Guid,System.Threading.CancellationToken)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.AssociateAsync(Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.Threading.CancellationToken)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.DisassociateAsync(Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.Threading.CancellationToken)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.RetrieveAsync(Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet,System.Threading.CancellationToken)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.RetrieveMultipleAsync(Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.QueryBase,System.Threading.CancellationToken)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IOrganizationServiceExtensions.ExecuteAsync(Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.OrganizationRequest,System.Threading.CancellationToken)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService">
+            <summary>Provides programmatic access to the metadata and data for an organization.</summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.BeginCreate(Microsoft.Xrm.Sdk.Entity,System.AsyncCallback,System.Object)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.EndCreate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.BeginUpdate(Microsoft.Xrm.Sdk.Entity,System.AsyncCallback,System.Object)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.EndUpdate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.BeginDelete(System.String,System.Guid,System.AsyncCallback,System.Object)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.EndDelete(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.BeginAssociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.AsyncCallback,System.Object)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.EndAssociate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.BeginDisassociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.AsyncCallback,System.Object)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.EndDisassociate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.BeginRetrieve(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet,System.AsyncCallback,System.Object)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.EndRetrieve(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.BeginRetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase,System.AsyncCallback,System.Object)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.EndRetrieveMultiple(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.BeginExecute(Microsoft.Xrm.Sdk.OrganizationRequest,System.AsyncCallback,System.Object)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService.EndExecute(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Client.Async.AsyncServiceConfigurationFactory">
+            <summary>Represents a client factory for creating service configurations.</summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncServiceConfigurationFactory.CreateConfiguration``1(System.Uri)">
+            <summary>Creates a service configuration.</summary>
+            <returns>Type:  <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>A service configuration object.</returns>
+            <param name="serviceUri">Specifies the service’s URI.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncServiceConfigurationFactory.CreateConfiguration``1(System.Uri,System.Boolean,System.Reflection.Assembly)">
+            <summary>Creates a service configuration</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>A service configuration object.</returns>
+            <param name="serviceUri">Specifies the web service’s URI.</param>
+            <param name="assembly">An assembly containing proxy types.</param>
+            <param name="enableProxyTypes">True to enable proxy types; otherwise, False.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncServiceConfigurationFactory.CreateManagement``1(System.Uri)">
+            <summary>Creates a service management.</summary>
+            <returns>Type:  <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceManagement`1"></see>A service management object.</returns>
+            <param name="serviceUri">Specifies the service’s URI.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncServiceConfigurationFactory.CreateManagement``1(System.Uri,System.Boolean,System.Reflection.Assembly)">
+            <summary>Creates a service management.</summary>
+            <returns>Type:  <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceManagement`1"></see>A service management object.</returns>
+            <param name="serviceUri">Specifies the service’s URI.</param>
+            <param name="assembly">An assembly containing proxy types.</param>
+            <param name="enableProxyTypes">True to enable proxy types; otherwise, False.</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy">
+            <summary>Implements <see cref="T:Microsoft.Xrm.Sdk.Discovery.IDiscoveryService" /> and <see cref="T:Microsoft.Xrm.Sdk.Discovery.Async.IAsyncDiscoveryService" /> and provides an authenticated WCF channel to the discovery service endpoint.</summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.#ctor(System.Uri,System.Uri,System.ServiceModel.Description.ClientCredentials,System.ServiceModel.Description.ClientCredentials)">
+            <summary>Initializes a new instance of the DiscoveryServiceProxy class using a discovery service URI, home realm URI, and client and device credentials.</summary>
+            <param name="deviceCredentials">Type: Returns_ClientCredentials. The  pn_Windows_Live_ID device credentials.</param>
+            <param name="homeRealmUri">Type: Returns_URI. This parameter is set to a non-null value when a second ADFS instance is configured as an identity provider to the ADFS instance that pn_CRM_2011 has been configured with for claims authentication. The parameter value is the URI of the WS-Trust metadata endpoint of the second ADFS instance.</param>
+            <param name="uri">Type: Returns_URI. The URI of the discovery service.</param>
+            <param name="clientCredentials">Type: Returns_ClientCredentials. The logon credentials of the client.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.#ctor(Microsoft.Xrm.Sdk.Client.IServiceConfiguration{Microsoft.Xrm.Sdk.Discovery.Async.IWcfAsyncDiscoveryService},Microsoft.Xrm.Sdk.Client.SecurityTokenResponse)">
+            <summary>Initializes a new instance of the DiscoveryServiceProxy class using a service configuration and a security token response.</summary>
+            <param name="serviceConfiguration">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>. A service configuration.</param>
+            <param name="securityTokenResponse">Type: <see cref="P:Microsoft.Xrm.Sdk.Client.AuthenticationCredentials.SecurityTokenResponse"></see>. A security token response.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.#ctor(Microsoft.Xrm.Sdk.Client.IServiceConfiguration{Microsoft.Xrm.Sdk.Discovery.Async.IWcfAsyncDiscoveryService},System.ServiceModel.Description.ClientCredentials)">
+            <summary>Initializes a new instance of the DiscoveryServiceProxy class using a service configuration and client credentials.</summary>
+            <param name="serviceConfiguration">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>. A service configuration.</param>
+            <param name="clientCredentials">Type: Returns_ClientCredentials. The logon credentials of the client.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.#ctor(Microsoft.Xrm.Sdk.Client.IServiceManagement{Microsoft.Xrm.Sdk.Discovery.Async.IWcfAsyncDiscoveryService},Microsoft.Xrm.Sdk.Client.SecurityTokenResponse)">
+            <summary>Initializes a new instance of the DiscoveryServiceProxy class using a service management and a security token response.</summary>
+            <param name="serviceManagement">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>. A service management.</param>
+            <param name="securityTokenResponse">Type: <see cref="P:Microsoft.Xrm.Sdk.Client.AuthenticationCredentials.SecurityTokenResponse"></see>. A security token response.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.#ctor(Microsoft.Xrm.Sdk.Client.IServiceManagement{Microsoft.Xrm.Sdk.Discovery.Async.IWcfAsyncDiscoveryService},System.ServiceModel.Description.ClientCredentials)">
+            <summary>Initializes a new instance of the DiscoveryServiceProxy class using a service management and client credentials.</summary>
+            <param name="serviceManagement">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>. A service management.</param>
+            <param name="clientCredentials">Type: Returns_ClientCredentials. The logon credentials of the client.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.Execute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.BeginExecute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest,System.AsyncCallback,System.Object)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.EndExecute(System.IAsyncResult)">
+            <summary>See IDiscoveryService.<see cref="M:Microsoft.Xrm.Sdk.Discovery.IDiscoveryService.Execute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest)"></see></summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>The response from executing the discovery service request.</returns>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncDiscoveryServiceProxy.ExecuteAsync(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest,System.Threading.CancellationToken)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Client.Async.DiscoveryServiceProxyExtensions">
+            <summary>
+            Extension methods for DiscoveryServiceProxy class
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.DiscoveryServiceProxyExtensions.ToAsyncService(Microsoft.Xrm.Sdk.Client.DiscoveryServiceProxy)">
+            <summary>
+            Creates the async version of the service
+            </summary>
+            <param name="service">Synchronous service proxy</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy">
+            <summary>Implements <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"/> and <see cref="T:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService"/> and provides an authenticated WCF channel to the organization service.</summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.BeginCreate(Microsoft.Xrm.Sdk.Entity,System.AsyncCallback,System.Object)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EndCreate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.CreateAsync(Microsoft.Xrm.Sdk.Entity,System.Threading.CancellationToken)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.BeginUpdate(Microsoft.Xrm.Sdk.Entity,System.AsyncCallback,System.Object)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EndUpdate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.UpdateAsync(Microsoft.Xrm.Sdk.Entity,System.Threading.CancellationToken)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.BeginDelete(System.String,System.Guid,System.AsyncCallback,System.Object)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EndDelete(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.DeleteAsync(System.String,System.Guid,System.Threading.CancellationToken)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.BeginAssociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.AsyncCallback,System.Object)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EndAssociate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.AssociateAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.Threading.CancellationToken)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.BeginDisassociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.AsyncCallback,System.Object)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EndDisassociate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.DisassociateAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.Threading.CancellationToken)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.BeginRetrieve(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet,System.AsyncCallback,System.Object)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EndRetrieve(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.RetrieveAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet,System.Threading.CancellationToken)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.BeginRetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase,System.AsyncCallback,System.Object)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EndRetrieveMultiple(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.RetrieveMultipleAsync(Microsoft.Xrm.Sdk.Query.QueryBase,System.Threading.CancellationToken)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.BeginExecute(Microsoft.Xrm.Sdk.OrganizationRequest,System.AsyncCallback,System.Object)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EndExecute(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.ExecuteAsync(Microsoft.Xrm.Sdk.OrganizationRequest,System.Threading.CancellationToken)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.#ctor(System.Uri,System.Uri,System.ServiceModel.Description.ClientCredentials,System.ServiceModel.Description.ClientCredentials)">
+            <summary>Initializes a new instance of the <see cref="T:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy"></see> class using a organization service URI, home realm URI, and client and device credentials.</summary>
+            <param name="deviceCredentials">Type: Returns_ClientCredentials. The Windows Live ID device credentials.</param>
+            <param name="homeRealmUri">Type: Returns_URI. This parameter is set to a non-null value when a second ADFS instance is configured as an identity provider to the ADFS instance that pn_CRM_2011 has been configured with for claims authentication. The parameter value is the URI of the WS-Trust metadata endpoint of the second ADFS instance.</param>
+            <param name="uri">Type: Returns_URI. The URI of the organization service.</param>
+            <param name="clientCredentials">Type: Returns_ClientCredentials. The logon credentials of the client.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.#ctor(Microsoft.Xrm.Sdk.Client.IServiceConfiguration{Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService},Microsoft.Xrm.Sdk.Client.SecurityTokenResponse)">
+            <summary>Initializes a new instance of the <see cref="T:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy"></see> class using a service configuration and a security token response.</summary>
+            <param name="serviceConfiguration">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>&lt;<see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>&gt;. A service configuration.</param>
+            <param name="securityTokenResponse">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>. A security token response.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.#ctor(Microsoft.Xrm.Sdk.Client.IServiceConfiguration{Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService},System.ServiceModel.Description.ClientCredentials)">
+            <summary>Initializes a new instance of the <see cref="T:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy"></see> class using a service configuration and client credentials.</summary>
+            <param name="serviceConfiguration">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>&lt;<see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>&gt;. A service configuration.</param>
+            <param name="clientCredentials">Type: Returns_ClientCredentials. The logon credentials of the client.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.#ctor(Microsoft.Xrm.Sdk.Client.IServiceManagement{Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService},Microsoft.Xrm.Sdk.Client.SecurityTokenResponse)">
+            <summary>Initializes a new instance of the <see cref="T:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy"></see> class using a service management and a security token response.</summary>
+            <param name="serviceManagement">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceManagement`1"></see>&lt;<see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>&gt;. A service management.</param>
+            <param name="securityTokenResponse">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>. A security token response.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.#ctor(Microsoft.Xrm.Sdk.Client.IServiceManagement{Microsoft.Xrm.Sdk.Async.IWcfAsyncOrganizationService},System.ServiceModel.Description.ClientCredentials)">
+            <summary>Initializes a new instance of the <see cref="T:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy"></see> class using a service configuration and client credentials.</summary>
+            <param name="serviceManagement">Type: <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceManagement`1"></see>&lt;<see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>&gt;. A service management.</param>
+            <param name="clientCredentials">Type: Returns_ClientCredentials. The logon credentials of the client.</param>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.CallerId">
+            <summary>
+            Gets or sets the ID of the user for whom SDK calls are made on behalf of.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.UserType">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.CallerRegardingObjectId">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.SyncOperationType">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.SdkClientVersion">
+            <summary>
+            Gets or sets the version of the client.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EnableProxyTypes">
+            <summary>Enables support for the early-bound entity types.</summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.EnableProxyTypes(System.Reflection.Assembly)">
+            <summary>Enables support for the early-bound entity types exposed in a specified assembly.</summary>
+            <param name="assembly">Type: Returns_Assembly. An assembly containing early-bound entity types.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.CreateCore(Microsoft.Xrm.Sdk.Entity)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.RetrieveCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.UpdateCore(Microsoft.Xrm.Sdk.Entity)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.DeleteCore(System.String,System.Guid)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.ExecuteCore(Microsoft.Xrm.Sdk.OrganizationRequest)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.AssociateCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.DisassociateCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.RetrieveMultipleCore(Microsoft.Xrm.Sdk.Query.QueryBase)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.Create(Microsoft.Xrm.Sdk.Entity)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.Retrieve(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.Update(Microsoft.Xrm.Sdk.Entity)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.Delete(System.String,System.Guid)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.Execute(Microsoft.Xrm.Sdk.OrganizationRequest)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.Associate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.Disassociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.AsyncOrganizationServiceProxy.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Client.Async.OrganizationServiceProxyExtensions">
+            <summary>
+            Extension methods for OrganizationServiceProxy class
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Client.Async.OrganizationServiceProxyExtensions.ToAsyncService(Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy)">
+            <summary>
+            Converts to asynchronous proxy (if possible)
+            </summary>
+            <param name="service">The synchronous proxy</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Discovery.Async.IAsyncDiscoveryService">
+            <summary>Provides programmatic access to organization and user information. </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Discovery.Async.IAsyncDiscoveryService.ExecuteAsync(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest,System.Threading.CancellationToken)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Discovery.Async.IDiscoveryServiceExtensions">
+            <summary>
+            Extension methods for IDiscoveryService interface
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Discovery.Async.IDiscoveryServiceExtensions.ToAsyncService(Microsoft.Xrm.Sdk.Discovery.IDiscoveryService)">
+            <summary>
+            Creates an asynchronous version of the service client (if possible)
+            </summary>
+            <param name="service">The synchronous service</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Discovery.Async.IDiscoveryServiceExtensions.ExecuteAsync(Microsoft.Xrm.Sdk.Discovery.IDiscoveryService,Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest,System.Threading.CancellationToken)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="cancellationToken"></param>
+            <param name="service">The service instance</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.Discovery.Async.IWcfAsyncDiscoveryService">
+            <summary>Provides programmatic access to organization and user information. </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Discovery.Async.IWcfAsyncDiscoveryService.BeginExecute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest,System.AsyncCallback,System.Object)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.Discovery.Async.IWcfAsyncDiscoveryService.EndExecute(System.IAsyncResult)">
+            <summary>Finishes the asynchronous operation</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient">
+            <summary>Implements <see cref="T:Microsoft.Xrm.Sdk.Discovery.IDiscoveryService" /> and <see cref="T:Microsoft.Xrm.Sdk.Discovery.Async.IAsyncDiscoveryService" /> and provides an authenticated connection to the Discovery.svc/web endpoint. This /web endpoint is also used by web resources.</summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient.#ctor(System.Uri)">
+            <summary>Constructor</summary>
+            <param name="serviceUrl">The URL of the Discovery web service.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient.#ctor(System.Uri,System.TimeSpan)">
+            <summary>constructor</summary>
+            <param name="serviceUrl">The URL of the Discovery web service.</param>
+            <param name="timeout">The maximum amount of time a single channel operation has to complete before a timeout fault is raised on a service channel binding.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient.CreateNewInitializer">
+            <summary>Creates the WCF proxy client initializer which gets invoked on every SDK method call.  This method makes sure that the access token and other header values are added to the outbound call.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.WebServiceClient.WebProxyClientContextInitializer`1"></see>A web proxy client context initializer.</returns>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient.ExecuteCore(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient.Execute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient.BeginExecute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest,System.AsyncCallback,System.Object)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient.EndExecute(System.IAsyncResult)">
+            <summary>See IDiscoveryService.<see cref="M:Microsoft.Xrm.Sdk.Discovery.IDiscoveryService.Execute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest)"></see></summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>The response from executing the discovery service request.</returns>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyAsyncClient.ExecuteAsync(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest,System.Threading.CancellationToken)">
+            <summary>Executes a discovery service message in the form of a request, and returns a response. </summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>. The response from processing the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyClientExtensions">
+            <summary>
+            Extension methods for DiscoveryWebProxyClient class
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.DiscoveryWebProxyClientExtensions.ToAsyncClient(Microsoft.Xrm.Sdk.WebServiceClient.DiscoveryWebProxyClient)">
+            <summary>
+            Creates the async version of the client
+            </summary>
+            <param name="client">Synchronous service client</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient">
+            <summary>Implements <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"/> and <see cref="T:Microsoft.Xrm.Sdk.Async.IAsyncOrganizationService"/> and provides an authenticated connection to the Organization.svc/web endpoint. This /web endpoint is also used by web resources.</summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.BeginCreate(Microsoft.Xrm.Sdk.Entity,System.AsyncCallback,System.Object)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.EndCreate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.CreateAsync(Microsoft.Xrm.Sdk.Entity,System.Threading.CancellationToken)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.BeginUpdate(Microsoft.Xrm.Sdk.Entity,System.AsyncCallback,System.Object)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.EndUpdate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.UpdateAsync(Microsoft.Xrm.Sdk.Entity,System.Threading.CancellationToken)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.BeginDelete(System.String,System.Guid,System.AsyncCallback,System.Object)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.EndDelete(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.DeleteAsync(System.String,System.Guid,System.Threading.CancellationToken)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.BeginAssociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.AsyncCallback,System.Object)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.EndAssociate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.AssociateAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.Threading.CancellationToken)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.BeginDisassociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.AsyncCallback,System.Object)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.EndDisassociate(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.DisassociateAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection,System.Threading.CancellationToken)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.BeginRetrieve(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet,System.AsyncCallback,System.Object)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.EndRetrieve(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.RetrieveAsync(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet,System.Threading.CancellationToken)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.BeginRetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase,System.AsyncCallback,System.Object)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.EndRetrieveMultiple(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.RetrieveMultipleAsync(Microsoft.Xrm.Sdk.Query.QueryBase,System.Threading.CancellationToken)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.BeginExecute(Microsoft.Xrm.Sdk.OrganizationRequest,System.AsyncCallback,System.Object)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.EndExecute(System.IAsyncResult)">
+            <summary>
+            Ends the operation
+            </summary>
+            <param name="result">The async operation</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.ExecuteAsync(Microsoft.Xrm.Sdk.OrganizationRequest,System.Threading.CancellationToken)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.SyncOperationType">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.CallerId">
+            <summary>
+            Gets or sets the ID of the user for whom SDK calls are made on behalf of.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.userType">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.CallerRegardingObjectId">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.#ctor(System.Uri,System.Boolean)">
+            <summary>constructor_initializes<see cref="T:Microsoft.Xrm.Sdk.WebServiceClient.OrganizationWebProxyClient"></see> class using an Organization service URL.</summary>
+            <param name="useStrongTypes">Type: Returns_Boolean. When true, use early-bound types; otherwise, false.</param>
+            <param name="serviceUrl">Type: Returns_URI. The URL of the Organization web service.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.#ctor(System.Uri,System.Reflection.Assembly)">
+            <summary>constructor_initializes<see cref="T:Microsoft.Xrm.Sdk.WebServiceClient.OrganizationWebProxyClient"></see> class using an Organization service URL and an assembly.</summary>
+            <param name="strongTypeAssembly">Type: Returns_Assembly. An assembly containing early-bound types.</param>
+            <param name="serviceUrl">Type: Returns_URI. The URL of the Organization web service.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.#ctor(System.Uri,System.TimeSpan,System.Boolean)">
+            <summary>constructor_initializes<see cref="T:Microsoft.Xrm.Sdk.WebServiceClient.OrganizationWebProxyClient"></see> class using an Organization service URL and time span.</summary>
+            <param name="useStrongTypes">Type: Returns_Boolean. When true, use early-bound types; otherwise, false.</param>
+            <param name="serviceUrl">Type: Returns_URI. The URL of the Organization web service.</param>
+            <param name="timeout">Type: Returns_TimeSpan. The maximum amount of time a single channel operation has to complete before a timeout fault is raised on a service channel binding.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.#ctor(System.Uri,System.TimeSpan,System.Reflection.Assembly)">
+            <summary>constructor_initializes<see cref="T:Microsoft.Xrm.Sdk.WebServiceClient.OrganizationWebProxyClient"></see> class using an Organization service URL, a time span, and an assembly.</summary>
+            <param name="strongTypeAssembly">Type: Returns_Assembly. An assembly containing early-bound types.</param>
+            <param name="timeout">Type: Returns_TimeSpan. The maximum amount of time a single channel operation has to complete before a timeout fault is raised on a service channel binding.</param>
+            <param name="uri">Type: Returns_URI. The URL of the Organization web service.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.CreateNewInitializer">
+            <summary>Creates the WCF proxy client initializer which gets invoked on every SDK method call.  This method makes sure that the access token and other header values are added to the outbound call.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.WebServiceClient.WebProxyClientContextInitializer`1"></see>A web proxy client context initializer.</returns>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.Associate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.Create(Microsoft.Xrm.Sdk.Entity)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.Delete(System.String,System.Guid)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.Disassociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.Execute(Microsoft.Xrm.Sdk.OrganizationRequest)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.Retrieve(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.Update(Microsoft.Xrm.Sdk.Entity)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.CreateCore(Microsoft.Xrm.Sdk.Entity)">
+            <summary>Creates a record. </summary>
+            <returns>Type:Returns_Guid
+            The ID of the newly created record.</returns>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that contains the properties to set in the newly created record.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.RetrieveCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet)">
+            <summary>Retrieves a record.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>
+            The requested entity.</returns>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to retrieve.</param>
+            <param name="columnSet">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>. A query that specifies the set of columns, or attributes, to retrieve. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.UpdateCore(Microsoft.Xrm.Sdk.Entity)">
+            <summary>Updates an existing record.</summary>
+            <param name="entity">Type: <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>. An entity instance that has one or more properties set to be updated in the record.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.DeleteCore(System.String,System.Guid)">
+            <summary>Deletes a record.</summary>
+            <param name="id">Type: Returns_Guid. The ID of the record that you want to delete.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.ExecuteCore(Microsoft.Xrm.Sdk.OrganizationRequest)">
+            <summary>Executes a message in the form of a request, and returns a response.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>The response from the request. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+            <param name="request">Type: <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>. A request instance that defines the action to be performed.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.AssociateCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+            <summary>Creates a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. property_relatedentities to be associated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to create the link. </param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. property_entityid to which the related records are associated.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.DisassociateCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+            <summary>Deletes a link between records.</summary>
+            <param name="relatedEntities">Type: <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>. A collection of entity references (references to records) to be disassociated.</param>
+            <param name="relationship">Type: <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>. The name of the relationship to be used to remove the link.</param>
+            <param name="entityName">Type: Returns_String. The logical name of the entity that is specified in the entityId parameter.</param>
+            <param name="entityId">Type: Returns_Guid. The ID of the record from which the related records are disassociated.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyAsyncClient.RetrieveMultipleCore(Microsoft.Xrm.Sdk.Query.QueryBase)">
+            <summary>Retrieves a collection of records.</summary>
+            <returns>Type: <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>The collection of entities returned from the query.</returns>
+            <param name="query">Type: <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>. A query that determines the set of records to retrieve.</param>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyClientExtensions">
+            <summary>
+            Extension methods for OrganizationWebProxyClient class
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Sdk.WebServiceClient.Async.OrganizationWebProxyClientExtensions.ToAsyncClient(Microsoft.Xrm.Sdk.WebServiceClient.OrganizationWebProxyClient)">
+            <summary>
+            Creates asynchronous proxy (if possible)
+            </summary>
+            <param name="client">The synchronous proxy</param>
+        </member>
+    </members>
+</doc>
