@@ -6,23 +6,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using System.Xml.Linq;
+using Microsoft.TeamFoundation.TestManagement.WebApi;
 
 namespace ConsoleApp1
 {
-    public class UpdateData
+    class UpdateData:Common
     {
-        //מדינות
-        public static async Task<ExecuteMultipleResponse> UpdateCountries()
+        public static async Task<ExecuteMultipleResponse> Execute()
         {
-            var json = await Common.HttpRequest(Common.Urls["getAllCountries"]);
+            var res= await UpdateCountries();
+            var res1 = await UpdateManufacturers();
+            var res2 = await UpdateModels();
+            return res2;
+        }
+        //מדינות
+        private static async Task<ExecuteMultipleResponse> UpdateCountries()
+        {
+            var json = await HttpRequest(Urls["getAllCountries"]);
             var records = json["result"]["records"];
             var requests = new List<CreateRequest>();
-            var allContries = Common.GetAllCountries();
+            var allContries = GetAllCountries();
 
             foreach (var record in records)
             {
                 string countryName = (string)record["tozeret_eretz_nm"];
-                if (countryName!=null&& !allContries.ContainsKey(countryName))
+                if (countryName!=null&& !allContries.ContainsValue(countryName))
                 {
                     Entity countryToCreate = new Entity("roe_countries");
                     countryToCreate.Attributes.Add("roe_name", countryName);
@@ -31,23 +40,23 @@ namespace ConsoleApp1
                 }
 
             }
-            var response = await Common.MultipleCreateRequests(Common.service, requests);
-            Common.HandlingMultipleResponse(response, requests.Count);
-            Console.WriteLine($"Created {requests.Count} records");
+            var response = await MultipleCreateRequests(service, requests);
+            HandlingMultipleResponse(response, requests.Count,1);
+            Console.WriteLine($"Created {requests.Count} new countries");
             return response;
         }
         //יצרנים
-        public static async Task<ExecuteMultipleResponse> UpdateManufacturers()
+        private static async Task<ExecuteMultipleResponse> UpdateManufacturers()
         {
-            var json = await Common.HttpRequest(Common.Urls["getAllManufacturers"]);
+            var json = await HttpRequest(Urls["getAllManufacturers"]);
             var records = json["result"]["records"];
             var requests = new List<CreateRequest>();
-            var allContries = Common.GetAllCountries();
-            var allManufacturers = Common.GetAllManufacturer();
+            var allContries = GetAllCountries();
+            var allManufacturers = GetAllManufacturer();
             foreach (var record in records)
             {
                 string codeManufacturer = (string)record["tozeret_cd"];
-                if (!allManufacturers.ContainsKey(codeManufacturer))
+                if (!allManufacturers.ContainsValue(codeManufacturer))
                 {
                     Entity newManufacturer = BuildManufacturer(record, allContries);
                     if (newManufacturer != null)
@@ -58,53 +67,53 @@ namespace ConsoleApp1
                 }
 
             }
-            var response = await Common.MultipleCreateRequests(Common.service, requests);
-            Common.HandlingMultipleResponse(response, requests.Count);
-            Console.WriteLine($"Created {requests.Count} records");
+            var response = await MultipleCreateRequests(service, requests);
+            HandlingMultipleResponse(response, requests.Count,1);
+            Console.WriteLine($"Created {requests.Count}  new manufactorer");
             return response;
         }
         //דגמים
-        public static async Task<ExecuteMultipleResponse> UpdateModels()
+        private static async Task<ExecuteMultipleResponse> UpdateModels()
         {
-            int countFeild=0;
             try
             {
-                var json = await Common.HttpRequest(Common.Urls["getAllModels"]);
+                var json = await HttpRequest(Urls["getAllModels"]);
                 var records = json["result"]["records"];
                 var requests = new List<CreateRequest>();
-                var allManufacturers = Common.GetAllManufacturer();
-                var allCodes = Common.DictionaryCodesMM();
-
+                var allManufacturerFromCRM = Common.GetAllManufacturer();
+                var allModelsFromCRM = GetAllModels();
+                var recordAlreadyCreated = new List<string>();
                 foreach (var record in records)
                 {
-                    string codeModel = (string)record["degem_cd"];
-                    string codeManufacturer = (string)record["tozeret_cd"];
-                    bool existSameCodeOfModel = allCodes.ContainsKey(codeModel);
-                    if (!existSameCodeOfModel || existSameCodeOfModel && allCodes[codeModel] != codeManufacturer)
+         
+                    string modelFullNameUnique = GetMFullNameModelUnique(record);
+                    if (!recordAlreadyCreated.Contains(modelFullNameUnique) && !allModelsFromCRM.ContainsValue(modelFullNameUnique))
                     {
-                        Entity newModel = BuildModel(record, allManufacturers);
+
+                        string manufacturerCode = (string)record["tozeret_cd"];
+                        Guid manufacturerGuid = allManufacturerFromCRM.FirstOrDefault(x => x.Value == manufacturerCode).Key;
+                        Entity newModel = BuildModel(record, manufacturerGuid);
                         if (newModel != null)
                         {
                             var request = new CreateRequest { Target = newModel };
                             requests.Add(request);
+                            recordAlreadyCreated.Add(modelFullNameUnique);
+
                         }
                     }
                 }
-                var response = await Common.MultipleCreateRequests(Common.service, requests);
-                Common.HandlingMultipleResponse(response, requests.Count);
-                Console.WriteLine($"Created {requests.Count} records");
+                Console.WriteLine($"WE NEED TO UPDATED: {requests.Count} NEW MODELS");
+                ExecuteMultipleResponse response = await SplitListRequestsAndGetResponse(requests);
                 return response;
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                countFeild++;
             }
-            Console.WriteLine($"Count feild:{countFeild}");
             return null;
 
         }
-
-        public static Entity BuildManufacturer(JToken record, Dictionary<string, Guid> dictOfContries) 
+        private static Entity BuildManufacturer(JToken record, Dictionary<Guid,string> dictOfContries) 
         {
             Entity manufacturerToCreate;
             try
@@ -113,9 +122,10 @@ namespace ConsoleApp1
                 manufacturerToCreate.Attributes.Add("roe_code", (string)record["tozeret_cd"]);
                 manufacturerToCreate.Attributes.Add("roe_name", (string)record["tozeret_nm"]);
                 string countryName = (string)record["tozeret_eretz_nm"];
-                if (dictOfContries.ContainsKey(countryName))
+                Guid guidContry  = dictOfContries.FirstOrDefault(x => x.Value == countryName).Key;
+                if (guidContry!= Guid.Empty)
                 {
-                    EntityReference countryRef = new EntityReference("roe_countries", dictOfContries[countryName]);
+                    EntityReference countryRef = new EntityReference("roe_countries", guidContry);
                     manufacturerToCreate.Attributes.Add("roe_countries", countryRef);
                 }
 
@@ -126,21 +136,20 @@ namespace ConsoleApp1
             return manufacturerToCreate;
           
         }
-        public static Entity BuildModel(JToken record,Dictionary<string, Guid> dictOfManufacturer)
+        private static Entity BuildModel(JToken record,Guid guidManufacturer)
         {
+
             Entity modelToCreate;
             try
             {
-                 modelToCreate = new Entity("roe_model");
+                modelToCreate = new Entity("roe_model");
+                string modelNameUnique = GetMFullNameModelUnique(record);
+                modelToCreate.Attributes.Add("roe_name", modelNameUnique);
                 modelToCreate.Attributes.Add("roe_year", (string)record["shnat_yitzur"]);
-                modelToCreate.Attributes.Add("roe_name", (string)record["kinuy_mishari"] +" - "+ (string)record["degem_nm"]);
                 modelToCreate.Attributes.Add("roe_code", (string)record["degem_cd"]);
-                string codeManufacturer = (string)record["tozeret_cd"];
-                if (dictOfManufacturer.ContainsKey(codeManufacturer))
-                {
-                    EntityReference manufacturerRef = new EntityReference("roe_manufacturer", dictOfManufacturer[codeManufacturer]);
-                    modelToCreate.Attributes.Add("roe_manufacturer", manufacturerRef);
-                }
+                modelToCreate.Attributes.Add("roe_trade_name", (string)record["kinuy_mishari"]);
+                EntityReference manufacturerRef = new EntityReference("roe_manufacturer", guidManufacturer);
+                modelToCreate.Attributes.Add("roe_manufacturer", manufacturerRef);
 
             }
             catch
@@ -150,6 +159,19 @@ namespace ConsoleApp1
             return modelToCreate;
 
         }
+        private static string GetMFullNameModelUnique(JToken record)
+        {
+            string tradeName = (string)record["kinuy_mishari"];
+            string modelNmae = (string)record["degem_nm"];
+            string modelCode = (string)record["degem_cd"];
+            string manufacturerCode = (string)record["tozeret_cd"];
+            string year = (string)record["shnat_yitzur"];
+            string fullNameModelUnique = $"{tradeName}-{modelNmae}-{manufacturerCode}-{year}";
+            return fullNameModelUnique;
+
+        }
+
+
 
 
 

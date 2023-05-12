@@ -19,14 +19,21 @@ namespace ConsoleApp1
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine($"Started on {DateTime.Now}");
-            //if (Common.CheckConnectToServiceSucssesfully())
-            //{
-            //    Console.WriteLine("Connected succsesfully");
-            //}
-            //var response = await Update.UpdateManufacturers();
-            //Console.WriteLine($"Started on {DateTime.Now}");
-            //Console.ReadKey();
+            Console.WriteLine("Waiting to connected...");
+            if (Common.CheckConnectToServiceSucssesfully())
+            {
+                DateTime startTime = DateTime.Now;
+                Console.WriteLine($"Connected succsesfully. Job started in {startTime}");             
+                await UpdateData.Execute();
+                DateTime stopTime = DateTime.Now;
+                TimeSpan elapsedTime = stopTime.Subtract(startTime);
+                Console.WriteLine($"Running time: {elapsedTime}");
+            }
+            else
+            {
+                Console.WriteLine("Feild connect to server");
+            }
+            Console.ReadKey();
         }
 
 
