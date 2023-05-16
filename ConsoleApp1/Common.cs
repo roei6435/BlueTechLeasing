@@ -7,22 +7,31 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xrm.Sdk.Async;
 using Newtonsoft.Json.Linq;
-using System.Web;
+using log4net;
+using Google.Apis.Requests;
+using Microsoft.VisualStudio.Services.Common;
+using static System.Net.WebRequestMethods;
+
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 namespace ConsoleApp1
 {
     class Common
     {
-        public static IOrganizationService service = GetService();
-        public static readonly Dictionary<string, string> Urls = new Dictionary<string, string>
+        protected static readonly ILog logger = LogManager.GetLogger(typeof(Program));
+        protected static IOrganizationService service = GetService();
+        readonly static string baseUrl = "https://data.gov.il/api/3/action/datastore_search?resource_id=";
+        readonly static string requestId = ConfigurationManager.AppSettings["requestId"];
+
+        protected static readonly Dictionary<string, string> Urls = new Dictionary<string, string>
         {
-            {"getAllManufacturers", "https://data.gov.il/api/3/action/datastore_search?resource_id=142afde2-6228-49f9-8a29-9b6c3a0cbe40&limit=100000&fields=tozeret_nm,tozeret_cd,tozeret_eretz_nm&distinct=true&sort=tozeret_cd%20asc"},
-            {"getAllCountries", "https://data.gov.il/api/3/action/datastore_search?resource_id=142afde2-6228-49f9-8a29-9b6c3a0cbe40&fields=tozeret_eretz_nm&distinct=true"},
-            {"getAllModels", "https://data.gov.il/api/3/action/datastore_search?resource_id=142afde2-6228-49f9-8a29-9b6c3a0cbe40&limit=100000&distinct=true&filters={%22shnat_yitzur%22:[%222022%22,%20%222023%22,%20%222021%22,%20%222020%22],%22sug_degem%22:%22P%22}&fields=tozeret_cd,tozeret_nm,degem_nm,degem_cd,kinuy_mishari,shnat_yitzur" }
+
+            {"getAllManufacturers", $"{baseUrl}{requestId}&limit=100000&fields=tozeret_nm,tozeret_cd,tozeret_eretz_nm&distinct=true&sort=tozeret_cd%20asc"},
+            {"getAllCountries", $"{baseUrl}{requestId}&fields=tozeret_eretz_nm&distinct=true"},
+            {"getAllModels", baseUrl+requestId+"&limit=100000&distinct=true&filters={%22shnat_yitzur%22:[%222022%22,%20%222023%22,%20%222021%22,%20%222020%22],%22sug_degem%22:%22P%22}&fields=tozeret_cd,tozeret_nm,degem_nm,degem_cd,kinuy_mishari,shnat_yitzur" }
         };
 
         public static IOrganizationService GetService()
@@ -51,7 +60,7 @@ namespace ConsoleApp1
                 throw new Exception(err.Message);
             }
         }
-        public static async Task<JObject> HttpRequest(string url)
+        protected static async Task<JObject> HttpRequest(string url)
         {
             var httpClient = new HttpClient();
             var response = await httpClient.GetAsync(url);
@@ -62,10 +71,11 @@ namespace ConsoleApp1
             }
             else
             {
+                logger.Warn($"Request failed with status code {response.StatusCode}.");
                 throw new Exception($"Request failed with status code {response.StatusCode}.");
             }
         }
-        public static async Task<ExecuteMultipleResponse> MultipleCreateRequests<T>(IOrganizationService service, List<T> requests) where T : OrganizationRequest
+        protected static async Task<ExecuteMultipleResponse> MultipleCreateRequests<T>(IOrganizationService service, List<T> requests) where T : OrganizationRequest
         {
             var executeMultipleRequest = new ExecuteMultipleRequest()
             {
@@ -86,13 +96,13 @@ namespace ConsoleApp1
 
             return (ExecuteMultipleResponse)response;
         }
-    
-        public static void HandlingMultipleResponse(ExecuteMultipleResponse response, int countOfRequest,int numburPackage)
+
+        protected static void HandlingMultipleResponse(ExecuteMultipleResponse response, int countOfRequest,int numburPackage)
         {
 
             if (!response.IsFaulted && response.Responses.Count == countOfRequest)
             {
-                Console.WriteLine($"All requests ({countOfRequest}) were successful : Package numbur:{numburPackage}.");
+                logger.Info($"All requests ({countOfRequest}) were successful : Package numbur:{numburPackage}.");
             }
             else
             {
@@ -100,18 +110,23 @@ namespace ConsoleApp1
                 {
                     if (response.Responses[i].Fault != null)
                     {
-                        Console.WriteLine($"Request {i + 1} in package {numburPackage} failed with error code,\n" +
+                        logger.Info($"Request {i + 1} in package {numburPackage} failed with error code:,\n" +
                             $" {response.Responses[i].Fault.ErrorCode}.");
                     }
                 }
             }
         }
 
-        public static async Task<ExecuteMultipleResponse> SplitListRequestsAndGetResponse(List<CreateRequest> requests)
+        protected static async Task<ExecuteMultipleResponse> SplitListRequestsAndGetResponse(List<CreateRequest> requests)
         {
-            ExecuteMultipleResponse response = null;
+            ExecuteMultipleResponse response;
+            if (requests.Count == 0)
+            {
+                response = await MultipleCreateRequests(service, requests);
+                return response;
+            }
+            response = null;
             int maxRequests = 1000; int numburPackage = 0;
-            int counterReq = requests.Count > maxRequests ? maxRequests : requests.Count;
             while (requests.Any())
             {
                 numburPackage++;
@@ -131,7 +146,7 @@ namespace ConsoleApp1
             return response;
         }
 
-        public static Dictionary<Guid, string> GetAllManufacturer()
+        protected static Dictionary<Guid, string> GetAllManufacturer()
         {
             var manufacturerInSystem = new Dictionary<Guid, string>();
             try
@@ -139,7 +154,7 @@ namespace ConsoleApp1
                 QueryExpression query = new QueryExpression("roe_manufacturer");
                 query.ColumnSet = new ColumnSet("roe_code", "roe_manufacturerid");
                 query.AddOrder("roe_code", OrderType.Ascending);
-                EntityCollection ec = Common.service.RetrieveMultiple(query);
+                EntityCollection ec = service.RetrieveMultiple(query);
                 if (ec != null && ec.Entities.Count > 0)
                 {
                     foreach (var entity in ec.Entities)
@@ -157,14 +172,14 @@ namespace ConsoleApp1
             return manufacturerInSystem;
         }
 
-        public static Dictionary<Guid, string> GetAllCountries()
+        protected static Dictionary<Guid, string> GetAllCountries()
         {
             var countriesInSystem = new Dictionary<Guid, string>();
             try
             {
                 QueryExpression query = new QueryExpression("roe_countries");
                 query.ColumnSet = new ColumnSet("roe_name", "roe_countriesid");
-                EntityCollection ec = Common.service.RetrieveMultiple(query);
+                EntityCollection ec = service.RetrieveMultiple(query);
                 if (ec != null && ec.Entities.Count > 0)
                 {
                     foreach (var entity in ec.Entities)
@@ -181,59 +196,27 @@ namespace ConsoleApp1
             }
             return countriesInSystem;
         }
-        public static Dictionary< Guid, string> GetAllModels1()
+
+        protected static Dictionary<Guid, string> GetAllModels()
         {
             var allModelsInCRM = new Dictionary<Guid, string>();
-
             try
             {
                 QueryExpression query = new QueryExpression("roe_model");
-                query.ColumnSet = new ColumnSet("roe_name", "roe_modelid");
-                EntityCollection ec = Common.service.RetrieveMultiple(query);
-                if (ec != null && ec.Entities.Count > 0)
+                query.ColumnSet.AddColumns("roe_name", "roe_modelid");
+                query.PageInfo = new PagingInfo
                 {
-                    foreach (var entity in ec.Entities)
-                    {
-                        string modelFullNameUnique = (string)entity.Attributes["roe_name"];                      
-                        Guid modelGuid = (Guid)entity.Attributes["roe_modelid"];
-                        allModelsInCRM.Add(modelGuid, modelFullNameUnique);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message, ex);
-            }
-            return allModelsInCRM;
-        }
-
-        public static Dictionary<Guid, string> GetAllModels()
-        {
-            var allModelsInCRM = new Dictionary<Guid, string>();
-            try
-            {
-                int pageNumber = 1;
-                int pageSize = 5000;
-                string pagingCookie = null;
-
-                while (true)
+                    PageNumber = 1,
+                    Count = 5000
+                };
+                EntityCollection results;
+                do
                 {
-                    QueryExpression query = new QueryExpression("roe_model")
-                    {
-                        ColumnSet = new ColumnSet("roe_name", "roe_modelid"),
-                        PageInfo = new PagingInfo
-                        {
-                            PageNumber = pageNumber,
-                            Count = pageSize,
-                            PagingCookie = pagingCookie
-                        }
-                    };
+                    results = service.RetrieveMultiple(query);
 
-                    EntityCollection ec = Common.service.RetrieveMultiple(query);
-
-                    if (ec != null && ec.Entities.Count > 0)
+                    if (results!=null&& results.Entities.Count > 0)
                     {
-                        foreach (var entity in ec.Entities)
+                        foreach (var entity in results.Entities)
                         {
                             string modelFullNameUnique = (string)entity.Attributes["roe_name"];
                             Guid modelGuid = (Guid)entity.Attributes["roe_modelid"];
@@ -241,39 +224,33 @@ namespace ConsoleApp1
                         }
                     }
 
-                    if (ec.MoreRecords)
-                    {
-                        pageNumber++;
-                        pagingCookie = ec.PagingCookie;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
+                    query.PageInfo.PageNumber++;
+                    query.PageInfo.PagingCookie = results.PagingCookie;
+                } while (results.MoreRecords);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
             }
+
             return allModelsInCRM;
         }
-        public static bool DeleteAllRecords(string entityName)
+        protected static bool DeleteAllRecords(string entityName)
         {
             int delete = 0;
             var query = new QueryExpression(entityName);
 
-            var entities = Common.service.RetrieveMultiple(query).Entities;
+            var entities = service.RetrieveMultiple(query).Entities;
 
             foreach (var entity in entities)
             {
                 delete++;
-                Common.service.Delete(entity.LogicalName, entity.Id);
+                service.Delete(entity.LogicalName, entity.Id);
                 if(delete > 3291)  break; 
             }
             Console.WriteLine($"DELETE {delete}");
             return true;
-        }
+        } //FOR TESTING
 
 
     }

@@ -168,3 +168,5 @@ C:\Users\roei6\Desktop\LeasingCRM\ConsoleApp1\obj\Debug\ImportDataGovIL.csproj.C
 C:\Users\roei6\Desktop\LeasingCRM\ConsoleApp1\obj\Debug\ImportDataGovIL.csproj.CopyComplete
 C:\Users\roei6\Desktop\LeasingCRM\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\roei6\Desktop\LeasingCRM\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\roei6\Desktop\LeasingCRM\ConsoleApp1\bin\Debug\log4net.dll
+C:\Users\roei6\Desktop\LeasingCRM\ConsoleApp1\bin\Debug\log4net.xml

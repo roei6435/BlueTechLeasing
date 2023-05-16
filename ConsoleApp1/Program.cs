@@ -12,28 +12,17 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using Microsoft.Xrm.Sdk.Async;
 using Microsoft.Xrm.Sdk.Messages;
+using log4net;
+
 
 namespace ConsoleApp1
 {
-    internal class Program
+    class Program
     {
+   
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Waiting to connected...");
-            if (Common.CheckConnectToServiceSucssesfully())
-            {
-                DateTime startTime = DateTime.Now;
-                Console.WriteLine($"Connected succsesfully. Job started in {startTime}");             
-                await UpdateData.Execute();
-                DateTime stopTime = DateTime.Now;
-                TimeSpan elapsedTime = stopTime.Subtract(startTime);
-                Console.WriteLine($"Running time: {elapsedTime}");
-            }
-            else
-            {
-                Console.WriteLine("Feild connect to server");
-            }
-            Console.ReadKey();
+            await UpdateData.Execute();
         }
 
 

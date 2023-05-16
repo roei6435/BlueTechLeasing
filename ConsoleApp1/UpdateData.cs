@@ -3,26 +3,49 @@ using Microsoft.Xrm.Sdk;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using System.Xml.Linq;
-using Microsoft.TeamFoundation.TestManagement.WebApi;
+
 
 namespace ConsoleApp1
 {
     class UpdateData:Common
     {
-        public static async Task<ExecuteMultipleResponse> Execute()
+        public static async Task Execute()
         {
-            var res= await UpdateCountries();
-            var res1 = await UpdateManufacturers();
-            var res2 = await UpdateModels();
-            return res2;
+            
+            logger.Info("Waiting to connected...");
+            if (CheckConnectToServiceSucssesfully())
+            {
+                logger.Info($"Connected successfully. Job started.");
+
+                var functions = new Func<Task<ExecuteMultipleResponse>>[] { UpdateCountries, UpdateManufacturers, UpdateModels };
+
+                foreach (var func in functions)
+                {
+                    ExecuteMultipleResponse response = await func();
+
+                    if (response.IsFaulted)
+                    {
+                        logger.Warn($"Faulted response - {func.Method.Name}");
+                    }
+                }
+                logger.Info("Job finished running.\n============================================================================================================================================================================="); 
+
+            }
+            else
+            {
+                logger.Info("Feild connect to server.");
+            }
+
+    
         }
+
+
         //מדינות
         private static async Task<ExecuteMultipleResponse> UpdateCountries()
         {
+
             var json = await HttpRequest(Urls["getAllCountries"]);
             var records = json["result"]["records"];
             var requests = new List<CreateRequest>();
@@ -30,19 +53,27 @@ namespace ConsoleApp1
 
             foreach (var record in records)
             {
-                string countryName = (string)record["tozeret_eretz_nm"];
-                if (countryName!=null&& !allContries.ContainsValue(countryName))
+                try
                 {
-                    Entity countryToCreate = new Entity("roe_countries");
-                    countryToCreate.Attributes.Add("roe_name", countryName);
-                    var request = new CreateRequest { Target = countryToCreate };
-                    requests.Add(request);
+                    string countryName = (string)record["tozeret_eretz_nm"];
+                    if (countryName != null && !allContries.ContainsValue(countryName))
+                    {
+                        Entity countryToCreate = new Entity("roe_countries");
+                        countryToCreate.Attributes.Add("roe_name", countryName);
+                        var request = new CreateRequest { Target = countryToCreate };
+                        requests.Add(request);
+                    }
                 }
+                catch (Exception err)
+                {
+                    logger.Error($"Error in loop: record:{record} exeption:{err.Message}");
+                }
+
 
             }
             var response = await MultipleCreateRequests(service, requests);
             HandlingMultipleResponse(response, requests.Count,1);
-            Console.WriteLine($"Created {requests.Count} new countries");
+            logger.Info($"WE NEED TO UPDATED: {requests.Count} NEW  COUNTRIES.");
             return response;
         }
         //יצרנים
@@ -55,37 +86,44 @@ namespace ConsoleApp1
             var allManufacturers = GetAllManufacturer();
             foreach (var record in records)
             {
-                string codeManufacturer = (string)record["tozeret_cd"];
-                if (!allManufacturers.ContainsValue(codeManufacturer))
+                try
                 {
-                    Entity newManufacturer = BuildManufacturer(record, allContries);
-                    if (newManufacturer != null)
+                    string codeManufacturer = (string)record["tozeret_cd"];
+                    if (!allManufacturers.ContainsValue(codeManufacturer))
                     {
-                        var request = new CreateRequest { Target = newManufacturer };
-                        requests.Add(request);
+                        Entity newManufacturer = BuildManufacturer(record, allContries);
+                        if (newManufacturer != null)
+                        {
+                            var request = new CreateRequest { Target = newManufacturer };
+                            requests.Add(request);
+                        }
                     }
                 }
+                catch (Exception err)
+                {
+                    logger.Error($"Error in loop: record:{record} exeption:{err.Message}");
+                }
+
 
             }
             var response = await MultipleCreateRequests(service, requests);
             HandlingMultipleResponse(response, requests.Count,1);
-            Console.WriteLine($"Created {requests.Count}  new manufactorer");
+            logger.Info($"WE NEED TO UPDATED: {requests.Count} NEW NANUFACTORER.");
             return response;
         }
         //דגמים
         private static async Task<ExecuteMultipleResponse> UpdateModels()
         {
-            try
+            var json = await HttpRequest(Urls["getAllModels"]);
+            var records = json["result"]["records"];
+            var requests = new List<CreateRequest>();
+            var allManufacturerFromCRM = GetAllManufacturer();
+            var allModelsFromCRM = GetAllModels();
+            var recordAlreadyCreated = new List<string>();
+            foreach (var record in records)
             {
-                var json = await HttpRequest(Urls["getAllModels"]);
-                var records = json["result"]["records"];
-                var requests = new List<CreateRequest>();
-                var allManufacturerFromCRM = Common.GetAllManufacturer();
-                var allModelsFromCRM = GetAllModels();
-                var recordAlreadyCreated = new List<string>();
-                foreach (var record in records)
+                try
                 {
-         
                     string modelFullNameUnique = GetMFullNameModelUnique(record);
                     if (!recordAlreadyCreated.Contains(modelFullNameUnique) && !allModelsFromCRM.ContainsValue(modelFullNameUnique))
                     {
@@ -102,15 +140,16 @@ namespace ConsoleApp1
                         }
                     }
                 }
-                Console.WriteLine($"WE NEED TO UPDATED: {requests.Count} NEW MODELS");
-                ExecuteMultipleResponse response = await SplitListRequestsAndGetResponse(requests);
-                return response;
+                catch (Exception err)
+                {
+                    logger.Error($"Error in loop: record:{record} exeption:{err.Message}");
+                }
+
             }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            return null;
+            logger.Info($"WE NEED TO UPDATED: {requests.Count} NEW MODELS");
+            ExecuteMultipleResponse response = await SplitListRequestsAndGetResponse(requests);
+            HandlingMultipleResponse(response, requests.Count, 1);
+            return response;
 
         }
         private static Entity BuildManufacturer(JToken record, Dictionary<Guid,string> dictOfContries) 

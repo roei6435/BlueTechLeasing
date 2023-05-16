@@ -1,0 +1,52 @@
+2023-05-15 19:14:52,712 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-15 19:14:56,696 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-15 19:14:58,521 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-15 19:14:58,521 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-15 19:15:00,454 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-15 19:15:00,454 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-15 19:15:05,627 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 3 NEW MODELS
+2023-05-15 19:15:06,009 [6] INFO  ConsoleApp1.Program - All requests (3) were successful : Package numbur:1.
+2023-05-15 19:15:06,009 [6] INFO  ConsoleApp1.Program - All requests (3) were successful : Package numbur:1.
+2023-05-15 19:15:06,009 [6] INFO  ConsoleApp1.Program - Job finished running.
+2023-05-15 19:15:06,009 [6] INFO  ConsoleApp1.Program - ================================================================================
+2023-05-16 12:44:08,290 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-16 12:44:18,344 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-16 12:44:19,933 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:44:19,933 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-16 12:44:21,746 [13] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:44:21,746 [13] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-16 12:44:27,105 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 5 NEW MODELS
+2023-05-16 12:44:30,050 [15] INFO  ConsoleApp1.Program - All requests (5) were successful : Package numbur:1.
+2023-05-16 12:44:30,050 [15] INFO  ConsoleApp1.Program - All requests (5) were successful : Package numbur:1.
+2023-05-16 12:44:30,050 [15] INFO  ConsoleApp1.Program - Job finished running.
+2023-05-16 12:44:30,050 [15] INFO  ConsoleApp1.Program - ================================================================================
+2023-05-16 12:51:07,694 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-16 12:51:09,152 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-16 12:51:10,198 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:51:10,198 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-16 12:51:11,214 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:51:11,214 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-16 12:51:16,435 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW MODELS
+2023-05-16 12:51:16,625 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:51:16,625 [7] INFO  ConsoleApp1.Program - Job finished running.
+2023-05-16 12:51:16,625 [7] INFO  ConsoleApp1.Program - ================================================================================
+2023-05-16 12:55:03,992 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-16 12:55:05,372 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-16 12:55:06,002 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:55:06,002 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-16 12:55:06,952 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:55:06,952 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-16 12:55:13,109 [9] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW MODELS
+2023-05-16 12:55:13,282 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:55:13,282 [6] INFO  ConsoleApp1.Program - Job finished running.
+2023-05-16 12:55:13,282 [6] INFO  ConsoleApp1.Program - ================================================================================
+2023-05-16 12:57:08,231 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-16 12:57:09,868 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-16 12:57:10,640 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:57:10,640 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-16 12:57:11,864 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:57:11,864 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-16 12:57:18,451 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW MODELS
+2023-05-16 12:57:18,631 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-16 12:57:18,631 [7] INFO  ConsoleApp1.Program - Job finished running.
+=============================================================================================================================================================================
