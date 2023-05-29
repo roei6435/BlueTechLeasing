@@ -1,52 +1,982 @@
-2023-05-15 19:14:52,712 [1] INFO  ConsoleApp1.Program - Waiting to connected...
-2023-05-15 19:14:56,696 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
-2023-05-15 19:14:58,521 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-15 19:14:58,521 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
-2023-05-15 19:15:00,454 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-15 19:15:00,454 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
-2023-05-15 19:15:05,627 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 3 NEW MODELS
-2023-05-15 19:15:06,009 [6] INFO  ConsoleApp1.Program - All requests (3) were successful : Package numbur:1.
-2023-05-15 19:15:06,009 [6] INFO  ConsoleApp1.Program - All requests (3) were successful : Package numbur:1.
-2023-05-15 19:15:06,009 [6] INFO  ConsoleApp1.Program - Job finished running.
-2023-05-15 19:15:06,009 [6] INFO  ConsoleApp1.Program - ================================================================================
-2023-05-16 12:44:08,290 [1] INFO  ConsoleApp1.Program - Waiting to connected...
-2023-05-16 12:44:18,344 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
-2023-05-16 12:44:19,933 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:44:19,933 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
-2023-05-16 12:44:21,746 [13] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:44:21,746 [13] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
-2023-05-16 12:44:27,105 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 5 NEW MODELS
-2023-05-16 12:44:30,050 [15] INFO  ConsoleApp1.Program - All requests (5) were successful : Package numbur:1.
-2023-05-16 12:44:30,050 [15] INFO  ConsoleApp1.Program - All requests (5) were successful : Package numbur:1.
-2023-05-16 12:44:30,050 [15] INFO  ConsoleApp1.Program - Job finished running.
-2023-05-16 12:44:30,050 [15] INFO  ConsoleApp1.Program - ================================================================================
-2023-05-16 12:51:07,694 [1] INFO  ConsoleApp1.Program - Waiting to connected...
-2023-05-16 12:51:09,152 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
-2023-05-16 12:51:10,198 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:51:10,198 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
-2023-05-16 12:51:11,214 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:51:11,214 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
-2023-05-16 12:51:16,435 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW MODELS
-2023-05-16 12:51:16,625 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:51:16,625 [7] INFO  ConsoleApp1.Program - Job finished running.
-2023-05-16 12:51:16,625 [7] INFO  ConsoleApp1.Program - ================================================================================
-2023-05-16 12:55:03,992 [1] INFO  ConsoleApp1.Program - Waiting to connected...
-2023-05-16 12:55:05,372 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
-2023-05-16 12:55:06,002 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:55:06,002 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
-2023-05-16 12:55:06,952 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:55:06,952 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
-2023-05-16 12:55:13,109 [9] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW MODELS
-2023-05-16 12:55:13,282 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:55:13,282 [6] INFO  ConsoleApp1.Program - Job finished running.
-2023-05-16 12:55:13,282 [6] INFO  ConsoleApp1.Program - ================================================================================
-2023-05-16 12:57:08,231 [1] INFO  ConsoleApp1.Program - Waiting to connected...
-2023-05-16 12:57:09,868 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
-2023-05-16 12:57:10,640 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:57:10,640 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
-2023-05-16 12:57:11,864 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:57:11,864 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
-2023-05-16 12:57:18,451 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW MODELS
-2023-05-16 12:57:18,631 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
-2023-05-16 12:57:18,631 [7] INFO  ConsoleApp1.Program - Job finished running.
+
+2023-05-18 17:23:13,902 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:23:16,056 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:23:21,988 [6] INFO  ConsoleApp1.Program - All requests (36) were successful : Package numbur:1.
+2023-05-18 17:23:21,988 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 36 NEW  COUNTRIES.
+2023-05-18 17:32:11,219 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:32:13,342 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:32:23,722 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:32:23,722 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 17:34:49,093 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:34:51,138 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:34:55,774 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:34:55,774 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 17:35:01,496 [10] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147217150.
+2023-05-18 17:35:01,496 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 269 NEW NANUFACTORER.
+2023-05-18 17:35:06,077 [10] WARN  ConsoleApp1.Program - Faulted response - UpdateManufacturers
+2023-05-18 17:37:10,739 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:37:12,732 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:37:17,094 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:37:17,094 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 17:37:23,003 [6] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147217150.
+2023-05-18 17:37:23,004 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 269 NEW NANUFACTORER.
+2023-05-18 17:40:02,543 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:40:04,629 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:40:11,716 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:40:11,716 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 17:40:17,551 [10] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147217149.
+2023-05-18 17:40:17,552 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 269 NEW NANUFACTORER.
+2023-05-18 17:40:20,657 [10] WARN  ConsoleApp1.Program - Faulted response - UpdateManufacturers
+2023-05-18 17:42:46,238 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:42:48,253 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:42:52,504 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:42:52,504 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 17:43:04,296 [10] INFO  ConsoleApp1.Program - All requests (269) were successful : Package numbur:1.
+2023-05-18 17:43:04,296 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 269 NEW NANUFACTORER.
+2023-05-18 17:56:51,386 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:56:53,416 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:56:58,448 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:56:58,448 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 17:57:05,112 [10] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:57:05,112 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-18 17:58:30,256 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:58:32,202 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:58:35,624 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:58:35,624 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 17:58:39,733 [10] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:58:39,733 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-18 17:58:44,607 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 59 NEW MODELS
+2023-05-18 17:58:45,193 [7] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147220989.
+2023-05-18 17:58:45,194 [7] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147220989.
+2023-05-18 17:58:47,950 [7] WARN  ConsoleApp1.Program - Faulted response - UpdateModels
+2023-05-18 17:59:41,203 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 17:59:42,785 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 17:59:49,150 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:59:49,150 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 17:59:52,799 [10] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 17:59:52,799 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-18 18:02:27,612 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-18 18:02:29,384 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-18 18:02:32,351 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 18:02:32,351 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-18 18:02:36,459 [10] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-18 18:02:36,459 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-18 18:02:40,275 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 59 NEW MODELS
+2023-05-18 18:02:40,594 [7] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147220989.
+2023-05-18 18:02:40,594 [7] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147220989.
+2023-05-18 18:02:43,091 [7] WARN  ConsoleApp1.Program - Faulted response - UpdateModels
+2023-05-21 11:38:23,603 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-21 11:38:28,206 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-21 11:43:20,816 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-21 11:43:22,481 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-21 11:43:28,089 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:43:28,089 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-21 11:43:33,430 [10] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:43:33,431 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-21 11:44:02,299 [8] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 59 NEW MODELS
+2023-05-21 11:44:03,155 [6] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147220989.
+2023-05-21 11:44:03,155 [6] INFO  ConsoleApp1.Program - Request 1 in package 1 failed with error code:,
+ -2147220989.
+2023-05-21 11:48:02,701 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-21 11:48:04,301 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-21 11:48:09,718 [18] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:48:09,718 [18] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-21 11:48:13,661 [8] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:48:13,661 [8] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-21 11:48:16,450 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 11,
+  "tozeret_nm": "סיאט פורטוגל",
+  "degem_nm": "7N-7112GY",
+  "degem_cd": 10,
+  "kinuy_mishari": "ALHAMBRA",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:16,866 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2AIG",
+  "degem_cd": 1198,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:17,282 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2AIG",
+  "degem_cd": 1198,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:17,692 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2AIG",
+  "degem_cd": 1287,
+  "kinuy_mishari": "A6 LIMOUSINE",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:18,101 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C2Y",
+  "degem_cd": 898,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:18,932 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C2Y",
+  "degem_cd": 899,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:19,652 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C2Y",
+  "degem_cd": 967,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:20,277 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C2Y",
+  "degem_cd": 1030,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:20,686 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C2Y",
+  "degem_cd": 1140,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:21,091 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C2Y",
+  "degem_cd": 1140,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:21,502 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C2Y",
+  "degem_cd": 1197,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:21,914 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C2Y",
+  "degem_cd": 1197,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:22,427 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 983,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:23,234 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 983,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:23,927 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 983,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:24,454 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 984,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:24,863 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 985,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:25,278 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 985,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:25,688 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 1036,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:26,634 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 1062,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:27,343 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 1066,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:28,043 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 1076,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:28,495 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 1087,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:28,905 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 1087,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:29,317 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C3Y",
+  "degem_cd": 1116,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:29,743 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C7Y",
+  "degem_cd": 883,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:30,148 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2C7Y",
+  "degem_cd": 883,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:30,856 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2CMY",
+  "degem_cd": 1115,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:31,590 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2CMY",
+  "degem_cd": 1115,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:32,303 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2CMY",
+  "degem_cd": 1227,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:32,724 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A2CMY",
+  "degem_cd": 1227,
+  "kinuy_mishari": "A6",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:33,151 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A5RCA",
+  "degem_cd": 1014,
+  "kinuy_mishari": "RS6",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:33,560 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A5RCA",
+  "degem_cd": 1061,
+  "kinuy_mishari": "RS6 AVANT",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:33,972 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A5RCA",
+  "degem_cd": 1138,
+  "kinuy_mishari": "RS6 AVANT",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:34,581 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A5RCA",
+  "degem_cd": 1138,
+  "kinuy_mishari": "RS6 AVANT",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:35,189 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A5RCA",
+  "degem_cd": 1202,
+  "kinuy_mishari": "RS6 AVANT",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:35,945 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A5RCA",
+  "degem_cd": 1202,
+  "kinuy_mishari": "RS6 AVANT",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:36,436 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A5RCA",
+  "degem_cd": 1219,
+  "kinuy_mishari": "RS6 AVANT",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:36,845 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4A5RRA",
+  "degem_cd": 1300,
+  "kinuy_mishari": "RS6 AVANT",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:37,259 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 908,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:37,671 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 916,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:38,087 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 964,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:38,498 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1071,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:38,910 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1072,
+  "kinuy_mishari": "A7 SPORTBACK",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:39,322 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1072,
+  "kinuy_mishari": "A7 SPORTBACK",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:39,726 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1083,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:40,138 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1083,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:40,549 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1083,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:40,961 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1145,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:41,379 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1266,
+  "kinuy_mishari": "A7 SPORTBACK",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:41,788 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA02Y",
+  "degem_cd": 1274,
+  "kinuy_mishari": "A7 SPORTBACK",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:42,207 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA07Y",
+  "degem_cd": 886,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:42,616 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA07Y",
+  "degem_cd": 938,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:43,024 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA0MY",
+  "degem_cd": 1075,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:43,433 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA0MY",
+  "degem_cd": 1075,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:43,839 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA0MY",
+  "degem_cd": 1075,
+  "kinuy_mishari": "A7",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:44,253 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA0QY",
+  "degem_cd": 945,
+  "kinuy_mishari": "A7 TFSI-E",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:44,664 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA0QY",
+  "degem_cd": 950,
+  "kinuy_mishari": "A7 TFSI-E",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:45,071 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KA0QY",
+  "degem_cd": 950,
+  "kinuy_mishari": "A7 TFSI-E",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:45,488 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KARCA",
+  "degem_cd": 968,
+  "kinuy_mishari": "RS7 SPORTBACK",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:45,900 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KARCA",
+  "degem_cd": 968,
+  "kinuy_mishari": "RS7 SPORTBACK",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:46,307 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KARCA",
+  "degem_cd": 1020,
+  "kinuy_mishari": "RS7 SPORTBACK",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:46,719 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KARCA",
+  "degem_cd": 1020,
+  "kinuy_mishari": "RS7 SPORTBACK",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:47,129 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KARCA",
+  "degem_cd": 1020,
+  "kinuy_mishari": "RS7 SPORTBACK",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:47,543 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KARCA",
+  "degem_cd": 1256,
+  "kinuy_mishari": "RS7 SPORTBACK",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:47,954 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4KARCA",
+  "degem_cd": 1256,
+  "kinuy_mishari": "RS7 SPORTBACK",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:48,363 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4MGSW1",
+  "degem_cd": 1297,
+  "kinuy_mishari": "SQ7",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:48,769 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N20DA",
+  "degem_cd": 902,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:49,175 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N20DA",
+  "degem_cd": 957,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:49,676 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N20DA",
+  "degem_cd": 957,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:50,092 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N20DA",
+  "degem_cd": 1009,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:50,715 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N20DA",
+  "degem_cd": 1009,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:51,401 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N20DA",
+  "degem_cd": 1009,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:52,278 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N20HA",
+  "degem_cd": 1059,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:52,687 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N2SSA",
+  "degem_cd": 1038,
+  "kinuy_mishari": "S8",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:53,101 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N80DA",
+  "degem_cd": 903,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:53,517 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N80DA",
+  "degem_cd": 955,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:53,929 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N80DA",
+  "degem_cd": 955,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:54,341 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N80DA",
+  "degem_cd": 973,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:54,751 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N80DA",
+  "degem_cd": 973,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:55,167 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N80DA",
+  "degem_cd": 1027,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:55,575 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N80DA",
+  "degem_cd": 1078,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:55,988 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4N80DA",
+  "degem_cd": 1078,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:56,421 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4NC0DA",
+  "degem_cd": 1199,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:57,169 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4NC0DA",
+  "degem_cd": 1199,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:57,924 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4NC0HA",
+  "degem_cd": 1150,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:58,467 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4NC0HA",
+  "degem_cd": 1150,
+  "kinuy_mishari": "A8",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:58,880 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4NCSSA",
+  "degem_cd": 1222,
+  "kinuy_mishari": "S8",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:59,289 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4NL0HA",
+  "degem_cd": 1149,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:48:59,699 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4NL0HA",
+  "degem_cd": 1152,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:00,108 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4NL0HA",
+  "degem_cd": 1152,
+  "kinuy_mishari": "A8 LONG",
+  "shnat_yitzur": "2023"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:00,741 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPRAF",
+  "degem_cd": 1060,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:01,494 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPRAF",
+  "degem_cd": 1060,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:02,324 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPRAF",
+  "degem_cd": 1154,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:02,735 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPREE",
+  "degem_cd": 960,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2020"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:03,159 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPREE",
+  "degem_cd": 960,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:03,569 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPREE",
+  "degem_cd": 1079,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:03,980 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPREE",
+  "degem_cd": 1079,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:04,492 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPREE",
+  "degem_cd": 1090,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2021"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:05,300 [3] ERROR ConsoleApp1.Program - Error in loop: record:{
+  "tozeret_cd": 19,
+  "tozeret_nm": "אאודי",
+  "degem_nm": "4SPREE",
+  "degem_cd": 1090,
+  "kinuy_mishari": "R8 COUPE",
+  "shnat_yitzur": "2022"
+} exeption:Incorrect type of attribute value Microsoft.Xrm.Sdk.EntityReference
+2023-05-21 11:49:05,300 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW MODELS
+2023-05-21 11:49:05,812 [30] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:49:05,812 [30] INFO  ConsoleApp1.Program - Job finished running.
+=============================================================================================================================================================================
+2023-05-21 11:49:42,879 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-21 11:49:44,908 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-21 11:49:52,345 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:49:52,345 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-21 11:49:58,518 [11] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:49:58,518 [11] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-21 11:59:45,439 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-21 11:59:47,559 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-21 11:59:48,435 [10] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:59:48,435 [10] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-21 11:59:49,424 [20] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 11:59:49,424 [20] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-21 12:00:13,227 [8] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 59 NEW MODELS
+2023-05-21 12:00:15,149 [11] INFO  ConsoleApp1.Program - All requests (59) were successful : Package numbur:1.
+2023-05-21 12:00:15,149 [11] INFO  ConsoleApp1.Program - All requests (59) were successful : Package numbur:1.
+2023-05-21 12:00:15,149 [11] INFO  ConsoleApp1.Program - Job finished running.
+=============================================================================================================================================================================
+2023-05-21 12:01:18,342 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-21 12:01:19,902 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-21 12:01:20,715 [12] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 12:01:20,715 [12] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-21 12:01:21,664 [15] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 12:01:21,664 [15] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-21 13:14:21,262 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 7957 NEW MODELS
+2023-05-21 13:14:41,452 [23] INFO  ConsoleApp1.Program - All requests (1000) were successful : Package numbur:1.
+2023-05-21 13:15:07,843 [25] INFO  ConsoleApp1.Program - All requests (1000) were successful : Package numbur:2.
+2023-05-21 13:15:31,912 [9] INFO  ConsoleApp1.Program - All requests (1000) were successful : Package numbur:3.
+2023-05-21 13:15:53,648 [34] INFO  ConsoleApp1.Program - All requests (1000) were successful : Package numbur:4.
+2023-05-21 13:16:29,095 [9] INFO  ConsoleApp1.Program - All requests (1000) were successful : Package numbur:5.
+2023-05-21 13:17:01,644 [35] INFO  ConsoleApp1.Program - All requests (1000) were successful : Package numbur:6.
+2023-05-21 13:17:25,164 [9] INFO  ConsoleApp1.Program - All requests (1000) were successful : Package numbur:7.
+2023-05-21 13:17:43,770 [47] INFO  ConsoleApp1.Program - All requests (957) were successful : Package numbur:8.
+2023-05-21 13:17:43,770 [47] INFO  ConsoleApp1.Program - All requests (7957) were successful : Package numbur:1.
+2023-05-21 13:17:43,770 [47] INFO  ConsoleApp1.Program - Job finished running.
+=============================================================================================================================================================================
+2023-05-21 13:19:01,703 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-21 13:19:05,308 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-21 13:19:11,236 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 13:19:11,236 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-21 13:19:16,162 [11] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 13:19:16,162 [11] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-21 13:22:52,504 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-21 13:22:54,100 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-21 13:22:54,874 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 13:22:54,874 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-21 13:22:55,806 [6] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-21 13:22:55,806 [6] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-21 13:23:00,555 [8] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 4 NEW MODELS
+2023-05-21 13:23:00,865 [6] INFO  ConsoleApp1.Program - All requests (4) were successful : Package numbur:1.
+2023-05-21 13:23:00,865 [6] INFO  ConsoleApp1.Program - All requests (4) were successful : Package numbur:1.
+2023-05-21 13:23:00,865 [6] INFO  ConsoleApp1.Program - Job finished running.
+=============================================================================================================================================================================
+2023-05-23 11:56:21,258 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-23 11:56:28,980 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-23 11:56:32,611 [15] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-23 11:56:32,611 [15] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-23 11:56:36,474 [21] INFO  ConsoleApp1.Program - All requests (1) were successful : Package numbur:1.
+2023-05-23 11:56:36,474 [21] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 1 NEW NANUFACTORER.
+2023-05-23 11:56:43,318 [8] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 5 NEW MODELS
+2023-05-23 11:56:43,966 [21] INFO  ConsoleApp1.Program - All requests (5) were successful : Package numbur:1.
+2023-05-23 11:56:43,966 [21] INFO  ConsoleApp1.Program - All requests (5) were successful : Package numbur:1.
+2023-05-23 11:56:43,966 [21] INFO  ConsoleApp1.Program - Job finished running.
+=============================================================================================================================================================================
+2023-05-24 11:56:20,773 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-24 11:56:24,876 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-24 11:56:26,498 [15] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-24 11:56:26,498 [15] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-24 11:56:28,092 [20] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-24 11:56:28,093 [20] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-24 11:56:33,487 [24] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 1 NEW MODELS
+2023-05-24 11:56:34,869 [10] INFO  ConsoleApp1.Program - All requests (1) were successful : Package numbur:1.
+2023-05-24 11:56:34,869 [10] INFO  ConsoleApp1.Program - All requests (1) were successful : Package numbur:1.
+2023-05-24 11:56:34,869 [10] INFO  ConsoleApp1.Program - Job finished running.
+=============================================================================================================================================================================
+2023-05-26 11:56:06,701 [1] INFO  ConsoleApp1.Program - Waiting to connected...
+2023-05-26 11:56:10,041 [1] INFO  ConsoleApp1.Program - Connected successfully. Job started.
+2023-05-26 11:56:11,501 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-26 11:56:11,501 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW  COUNTRIES.
+2023-05-26 11:56:12,811 [7] INFO  ConsoleApp1.Program - All requests (0) were successful : Package numbur:1.
+2023-05-26 11:56:12,811 [7] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 0 NEW NANUFACTORER.
+2023-05-26 11:56:17,139 [3] INFO  ConsoleApp1.Program - WE NEED TO UPDATED: 5 NEW MODELS
+2023-05-26 11:56:18,085 [7] INFO  ConsoleApp1.Program - All requests (5) were successful : Package numbur:1.
+2023-05-26 11:56:18,085 [7] INFO  ConsoleApp1.Program - All requests (5) were successful : Package numbur:1.
+2023-05-26 11:56:18,085 [7] INFO  ConsoleApp1.Program - Job finished running.
 =============================================================================================================================================================================

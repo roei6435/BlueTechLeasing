@@ -7,6 +7,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Jobs", "Jobs", "{6B0C52C9-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportDataGovIL", "ConsoleApp1\ImportDataGovIL.csproj", "{7FE19BB3-0DD8-4F6B-8F26-488635A8D743}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{454348AB-E16B-48E0-AA68-313895101708}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{77F2A73F-4B4F-4292-A81B-23F44F6FC8E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{9289708C-DD37-41E6-8F4D-65003D98961C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeasingCars.Oppertunity.Plugins", "LeasingCars.Oppertunity.Plugins\LeasingCars.Oppertunity.Plugins.csproj", "{05BBB6FB-96C3-4D81-B6C5-223B0AB31A4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeasingCars.Incident.Plugins", "LeasingCars.Incident.Plugins\LeasingCars.Incident.Plugins.csproj", "{015E848A-EF06-410F-ACBE-5BE5D3A6CAA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +27,27 @@ Global
 		{7FE19BB3-0DD8-4F6B-8F26-488635A8D743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FE19BB3-0DD8-4F6B-8F26-488635A8D743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FE19BB3-0DD8-4F6B-8F26-488635A8D743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9289708C-DD37-41E6-8F4D-65003D98961C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9289708C-DD37-41E6-8F4D-65003D98961C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9289708C-DD37-41E6-8F4D-65003D98961C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9289708C-DD37-41E6-8F4D-65003D98961C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BBB6FB-96C3-4D81-B6C5-223B0AB31A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BBB6FB-96C3-4D81-B6C5-223B0AB31A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BBB6FB-96C3-4D81-B6C5-223B0AB31A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BBB6FB-96C3-4D81-B6C5-223B0AB31A4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{015E848A-EF06-410F-ACBE-5BE5D3A6CAA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{015E848A-EF06-410F-ACBE-5BE5D3A6CAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{015E848A-EF06-410F-ACBE-5BE5D3A6CAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{015E848A-EF06-410F-ACBE-5BE5D3A6CAA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7FE19BB3-0DD8-4F6B-8F26-488635A8D743} = {6B0C52C9-CDAE-408A-ACC9-0B2E9F92896E}
+		{9289708C-DD37-41E6-8F4D-65003D98961C} = {77F2A73F-4B4F-4292-A81B-23F44F6FC8E1}
+		{05BBB6FB-96C3-4D81-B6C5-223B0AB31A4D} = {454348AB-E16B-48E0-AA68-313895101708}
+		{015E848A-EF06-410F-ACBE-5BE5D3A6CAA0} = {454348AB-E16B-48E0-AA68-313895101708}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F7B062AB-5354-4776-98CC-BDC77158FD57}

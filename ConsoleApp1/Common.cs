@@ -49,7 +49,7 @@ namespace ConsoleApp1
         public static bool CheckConnectToServiceSucssesfully()
         {
             IOrganizationService service = GetService();
-            Guid leadId = new Guid("6d7b103d-53c4-ed11-9886-000d3add8f0a"); //Exist Lead From System
+            Guid leadId = new Guid("ae90696b-de68-4c87-a606-4ff27918558e"); //Exist Lead From System
             try
             {
                 Entity lead = service.Retrieve("lead", leadId, new ColumnSet(true));
@@ -151,15 +151,15 @@ namespace ConsoleApp1
             var manufacturerInSystem = new Dictionary<Guid, string>();
             try
             {
-                QueryExpression query = new QueryExpression("roe_manufacturer");
-                query.ColumnSet = new ColumnSet("roe_code", "roe_manufacturerid");
-                query.AddOrder("roe_code", OrderType.Ascending);
+                QueryExpression query = new QueryExpression("new_manufacturers");
+                query.ColumnSet = new ColumnSet("new_code_manufacturer", "new_manufacturersid");
+                query.AddOrder("new_code_manufacturer", OrderType.Ascending);
                 EntityCollection ec = service.RetrieveMultiple(query);
                 if (ec != null && ec.Entities.Count > 0)
                 {
                     foreach (var entity in ec.Entities)
                     {
-                        string code = (string)entity.Attributes["roe_code"];
+                        string code = (string)entity.Attributes["new_code_manufacturer"];
                         Guid guidManufacturer = entity.Id; 
                         manufacturerInSystem.Add(guidManufacturer, code); 
                     }
@@ -177,14 +177,14 @@ namespace ConsoleApp1
             var countriesInSystem = new Dictionary<Guid, string>();
             try
             {
-                QueryExpression query = new QueryExpression("roe_countries");
-                query.ColumnSet = new ColumnSet("roe_name", "roe_countriesid");
+                QueryExpression query = new QueryExpression("new_countries");
+                query.ColumnSet = new ColumnSet("new_name", "new_countriesid");
                 EntityCollection ec = service.RetrieveMultiple(query);
                 if (ec != null && ec.Entities.Count > 0)
                 {
                     foreach (var entity in ec.Entities)
                     {
-                        string name = (string)entity.Attributes["roe_name"];
+                        string name = (string)entity.Attributes["new_name"];
                         Guid id = entity.Id;
                         countriesInSystem.Add(id, name);
                     }
@@ -202,8 +202,8 @@ namespace ConsoleApp1
             var allModelsInCRM = new Dictionary<Guid, string>();
             try
             {
-                QueryExpression query = new QueryExpression("roe_model");
-                query.ColumnSet.AddColumns("roe_name", "roe_modelid");
+                QueryExpression query = new QueryExpression("new_models");
+                query.ColumnSet.AddColumns("new_name", "new_modelsid");
                 query.PageInfo = new PagingInfo
                 {
                     PageNumber = 1,
@@ -218,8 +218,8 @@ namespace ConsoleApp1
                     {
                         foreach (var entity in results.Entities)
                         {
-                            string modelFullNameUnique = (string)entity.Attributes["roe_name"];
-                            Guid modelGuid = (Guid)entity.Attributes["roe_modelid"];
+                            string modelFullNameUnique = (string)entity.Attributes["new_name"];
+                            Guid modelGuid = (Guid)entity.Attributes["new_modelsid"];
                             allModelsInCRM.Add(modelGuid, modelFullNameUnique);
                         }
                     }

@@ -58,8 +58,8 @@ namespace ConsoleApp1
                     string countryName = (string)record["tozeret_eretz_nm"];
                     if (countryName != null && !allContries.ContainsValue(countryName))
                     {
-                        Entity countryToCreate = new Entity("roe_countries");
-                        countryToCreate.Attributes.Add("roe_name", countryName);
+                        Entity countryToCreate = new Entity("new_countries");
+                        countryToCreate.Attributes.Add("new_name", countryName);
                         var request = new CreateRequest { Target = countryToCreate };
                         requests.Add(request);
                     }
@@ -111,7 +111,7 @@ namespace ConsoleApp1
             logger.Info($"WE NEED TO UPDATED: {requests.Count} NEW NANUFACTORER.");
             return response;
         }
-        //דגמים
+
         private static async Task<ExecuteMultipleResponse> UpdateModels()
         {
             var json = await HttpRequest(Urls["getAllModels"]);
@@ -157,15 +157,15 @@ namespace ConsoleApp1
             Entity manufacturerToCreate;
             try
             {
-                manufacturerToCreate = new Entity("roe_manufacturer");
-                manufacturerToCreate.Attributes.Add("roe_code", (string)record["tozeret_cd"]);
-                manufacturerToCreate.Attributes.Add("roe_name", (string)record["tozeret_nm"]);
+                manufacturerToCreate = new Entity("new_manufacturers");
+                manufacturerToCreate.Attributes.Add("new_code_manufacturer", (string)record["tozeret_cd"]);
+                manufacturerToCreate.Attributes.Add("new_name", (string)record["tozeret_nm"]);
                 string countryName = (string)record["tozeret_eretz_nm"];
                 Guid guidContry  = dictOfContries.FirstOrDefault(x => x.Value == countryName).Key;
                 if (guidContry!= Guid.Empty)
                 {
-                    EntityReference countryRef = new EntityReference("roe_countries", guidContry);
-                    manufacturerToCreate.Attributes.Add("roe_countries", countryRef);
+                    EntityReference countryRef = new EntityReference("new_countries", guidContry);
+                    manufacturerToCreate.Attributes.Add("new_country", countryRef);
                 }
 
             }
@@ -181,14 +181,13 @@ namespace ConsoleApp1
             Entity modelToCreate;
             try
             {
-                modelToCreate = new Entity("roe_model");
+                modelToCreate = new Entity("new_models");
                 string modelNameUnique = GetMFullNameModelUnique(record);
-                modelToCreate.Attributes.Add("roe_name", modelNameUnique);
-                modelToCreate.Attributes.Add("roe_year", (string)record["shnat_yitzur"]);
-                modelToCreate.Attributes.Add("roe_code", (string)record["degem_cd"]);
-                modelToCreate.Attributes.Add("roe_trade_name", (string)record["kinuy_mishari"]);
-                EntityReference manufacturerRef = new EntityReference("roe_manufacturer", guidManufacturer);
-                modelToCreate.Attributes.Add("roe_manufacturer", manufacturerRef);
+                modelToCreate.Attributes.Add("new_name", modelNameUnique);
+                modelToCreate.Attributes.Add("new_model_code", (string)record["degem_cd"]);
+                modelToCreate.Attributes.Add("new_nickname", (string)record["kinuy_mishari"]);
+                EntityReference manufacturerRef = new EntityReference("new_manufacturers", guidManufacturer);
+                modelToCreate.Attributes.Add("new_manufacturer_of_model", manufacturerRef);
 
             }
             catch

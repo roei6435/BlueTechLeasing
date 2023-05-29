@@ -23,8 +23,8 @@ namespace ConsoleApp1
         static async Task Main(string[] args)
         {
             await UpdateData.Execute();
+            Console.ReadKey();
+
         }
-
-
     }
 }
