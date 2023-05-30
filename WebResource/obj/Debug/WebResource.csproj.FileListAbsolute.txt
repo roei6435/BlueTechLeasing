@@ -1,0 +1,8 @@
+C:\Users\roei6\Desktop\LeasingCRM\WebResource\obj\Debug\WebResource.csproj.AssemblyReference.cache
+C:\Users\roei6\Desktop\LeasingCRM\WebResource\obj\Debug\WebResource.csproj.SuggestedBindingRedirects.cache
+C:\Users\roei6\Desktop\LeasingCRM\WebResource\obj\Debug\WebResource.csproj.CoreCompileInputs.cache
+C:\Users\roei6\Desktop\LeasingCRM\WebResource\bin\Debug\WebResource.exe.config
+C:\Users\roei6\Desktop\LeasingCRM\WebResource\bin\Debug\WebResource.exe
+C:\Users\roei6\Desktop\LeasingCRM\WebResource\bin\Debug\WebResource.pdb
+C:\Users\roei6\Desktop\LeasingCRM\WebResource\obj\Debug\WebResource.exe
+C:\Users\roei6\Desktop\LeasingCRM\WebResource\obj\Debug\WebResource.pdb

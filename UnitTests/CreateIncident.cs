@@ -48,7 +48,6 @@ namespace UnitTests
             request["carNumber"] = "571500372";
             request["discriptionCase"] = "הנהג ליאור מורנו מצהיר על טיפול מתקרב ברכבו, סקודה אוקטביה, שבליסינג תפעולי עבור חברת קמביום.";
             request["caseType"] = "טיפול";
-            request["caseType"] = "טיפול";
 
             // Call the custom action
             OrganizationResponse response = _organizationService.Execute(request);
