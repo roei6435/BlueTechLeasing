@@ -6,6 +6,13 @@
 	    // Add on change event to the typeCase field.
 		let typeCase = formContext.getAttribute("new_type_case");
 		typeCase.addOnChange(async function() {
+	    await chengeOnFeildCaseType(formContext, typeCase);
+		});
+    }
+
+
+async function chengeOnFeildCaseType(formContext, typeCase){
+
 		let incidentTypeControl=formContext.getControl("new_type_case");
 		incidentTypeControl.clearNotification();
 		let codeIncidentType = typeCase.getValue();        
@@ -27,7 +34,7 @@
 				  var jsonResultCar=await retrieveReleventFeildesFromCar(carId);
 				  //console.log(jsonResultCar);
 				 if(codeIncidentType==3){    
-					 //choise test
+					 // test
 					 let dateLisenceVadilty=jsonResultCar["new_date_lisence_vadilty"];
 					 var result=testIsComingSoon(dateLisenceVadilty);
 					 if(!result.isComingSoon)
@@ -38,7 +45,7 @@
 					 }  
  
 				 }else{
-					 //choise care
+					 // care
 					 let kmNow=jsonResultCar["new_km"];
 					 let nextCare=jsonResultCar["new_next_treament"];
 					 var result =careIsComingSoon(kmNow,nextCare);
@@ -52,13 +59,10 @@
 			   }
 			 }
 		}
-		});
-    }
 
+	}
 
-
-
-	async function fetchModelRequest(fetchUrl){
+async function fetchModelRequest(fetchUrl){
 
 		let fetchOptions = {
 			method: "GET",

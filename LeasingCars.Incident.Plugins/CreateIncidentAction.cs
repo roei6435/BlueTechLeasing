@@ -28,7 +28,7 @@ namespace LeasingCars.Incident.Plugins
                 input.IdNumber = context.InputParameters.Contains("idNumber") ? context.InputParameters["idNumber"].ToString() : null;
                 input.CarNumber = context.InputParameters.Contains("carNumber") ? context.InputParameters["carNumber"].ToString() : null;
                 input.DiscriptionCase = context.InputParameters.Contains("discriptionCase") ? context.InputParameters["discriptionCase"].ToString() : null;
-                input.CaseType = context.InputParameters.Contains("caseType") ?context.InputParameters["caseType"].ToString() : null;
+                input.CaseType = context.InputParameters.Contains("caseType") ? (int)context.InputParameters["caseType"] : 0;
 
                 //call to BL layer and getting the output local object .
                 CreateIncidentActionBL BL = new CreateIncidentActionBL(service);

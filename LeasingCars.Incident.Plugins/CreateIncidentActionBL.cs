@@ -18,13 +18,19 @@ namespace LeasingCars.Incident.Plugins
         public string IdNumber { get; set; }
         public string CarNumber { get; set; }
         public string DiscriptionCase { get; set; }
-        public string CaseType { get; set; }
+        public int CaseType { get; set; }
     }
     public class OutputArgumemts
     {
-        public bool Success { get; set; }
+        public bool Success { get; set; } = false;
         public string Discription { get; set; }
-        public EntityReference IncidentRef { get; set; }
+        public EntityReference IncidentRef { get; set; }=null;
+    }
+    internal class Descriptions
+    {
+        public string NotExistCar { get; } = "Not exist car with this car numbur.";
+        public string NotExistDriverForThisCar { get; } = "This car does not have a driver in the system.";
+        public string CaseCreatedWithSucssesfully{ get; } = "Case created with sucssesfully.";
     }
     public class CreateIncidentActionBL
     {
@@ -37,31 +43,32 @@ namespace LeasingCars.Incident.Plugins
         public OutputArgumemts ExecuteCreateCase(InputArgumemts inputArgumemts)
         {
             OutputArgumemts output = new OutputArgumemts();
-            output.Success = false;
-            output.IncidentRef = null;
+            Descriptions descriptions= new Descriptions();
             try
             {
                 Guid car = FindCarByNumbur(inputArgumemts.CarNumber);
                 if (car == Guid.Empty)
                 {
-                    output.Discription = "Not exist car with this car numbur.";
+                    output.Discription = descriptions.NotExistCar;
                     return output;
                 }
 
-                Guid driver = FindDriver(inputArgumemts.IdNumber, car);
-                if (driver == Guid.Empty)
+                Entity driver = FindDriver(inputArgumemts.IdNumber, car);
+                if (driver.Id == Guid.Empty)
                 {
-                    output.Discription = "This car does not have a driver in the system.";
+                    output.Discription = descriptions.NotExistDriverForThisCar;
                     return output;
                 }
+
+
                 Guid company = FindCompany(inputArgumemts.BusinessNumber, driver);
 
                 OptionSetValue caseType = FindOptionValueCodeByNameOfCase(inputArgumemts.CaseType);
 
-                Guid caseCreated = CreateCase(car, driver, company, caseType, inputArgumemts.DiscriptionCase);
+                Guid caseCreated = CreateCase(car, driver.Id, company, caseType, inputArgumemts.DiscriptionCase);
 
                 output.Success = true;
-                output.Discription = "Case created with sucssesfully.";
+                output.Discription = descriptions.CaseCreatedWithSucssesfully;
                 output.IncidentRef = new EntityReference("incident", caseCreated);
 
                 return output;
@@ -86,67 +93,54 @@ namespace LeasingCars.Incident.Plugins
 
             return service.Create(newCase);
         }
-        private OptionSetValue FindOptionValueCodeByNameOfCase(string caseType)
+        private OptionSetValue FindOptionValueCodeByNameOfCase(int caseType)
         {
             switch (caseType)
             {
-                case "תקלה":
+                case 1:                 //fault
                     return new OptionSetValue(1);
-                case "תאונה":
+                case 2:                 //accident
                     return new OptionSetValue(2);
-                case "טסט":
+                case 3:                 //test
                     return new OptionSetValue(3);
-                case "טיפול":
+                case 4:                 //care
                     return new OptionSetValue(4);
-                default:
+                default:                //other
                     return new OptionSetValue(5);
             }
 
         }
-        private Guid FindCompany(string businessNumber, Guid driver)
+        private Guid FindCompany(string businessNumber, Entity driver)
         {
-            // A logical requirement:
-            //1.find company by bussinuess numbur.
-            //2.if not be existing, find by driver.
-
-            QueryExpression query = new QueryExpression("new_drivers");
-            query.Criteria.AddCondition(new ConditionExpression("new_driversid", ConditionOperator.Equal, driver));
-            query.ColumnSet = new ColumnSet("new_company_of_driver");
-
-            LinkEntity accountLink = new LinkEntity("new_drivers", "account", "new_company_of_driver", "accountid", JoinOperator.LeftOuter);
-            accountLink.LinkCriteria.AddCondition(new ConditionExpression("new_company_id", ConditionOperator.Equal, businessNumber));
-            accountLink.Columns.AddColumn("accountid"); 
-
-          
-            query.LinkEntities.Add(accountLink);
-
-            EntityCollection results = service.RetrieveMultiple(query);
-
+            //find company by driver
+            //else check the business number and send query to service
             Guid company = Guid.Empty;
-            if (results.Entities.Count > 0)
+            if (driver.Contains("new_company_of_driver") && driver["new_company_of_driver"] is EntityReference)
             {
-                if (results.Entities[0].Attributes.Contains("account1.accountid"))   //אם מצאתי לפי ח.פ
+                company = ((EntityReference)driver["new_company_of_driver"]).Id;
+            }
+            else
+            {
+                if (driver.Contains("account1.new_company_id") && ((AliasedValue)driver["account1.new_company_id"]).Value != null)
                 {
-                     AliasedValue findByBussnissesNum= (AliasedValue)results.Entities[0].Attributes["account1.accountid"];
-                     company= (Guid)findByBussnissesNum.Value;
+                    businessNumber = ((AliasedValue)driver["account1.new_company_id"]).Value.ToString();
                 }
-                else
+                QueryExpression query = new QueryExpression("account");
+                query.Criteria.AddCondition(new ConditionExpression("new_company_id", ConditionOperator.Equal, businessNumber));
+                query.ColumnSet = new ColumnSet(false);
+
+                EntityCollection results = service.RetrieveMultiple(query);
+                if (results != null && results.Entities.Count > 0)
                 {
-                    //אחרת נמצא לפי נהג
-                    EntityReference findByDriver = results.Entities[0].GetAttributeValue<EntityReference>("new_company_of_driver");
-                    company= findByDriver.Id;
+                    company = results.Entities.FirstOrDefault().Id;
                 }
             }
 
             return company;
         }
-        private Guid FindDriver(string driverId,Guid car)   
+        public Entity FindDriver(string driverId, Guid car)
         {
-               // A logical requirement:
-               //1.by driver id
-               //2.if not be existing, find by car.
             QueryExpression query = new QueryExpression("new_drivers");
-
 
             //GET ALL DRIVER WITH THIS ID AND THIS CAR.
             FilterExpression filter = new FilterExpression(LogicalOperator.Or);
@@ -155,26 +149,20 @@ namespace LeasingCars.Incident.Plugins
 
             query.Criteria.AddFilter(filter);
 
-            query.ColumnSet = new ColumnSet("new_id_driver", "new_car_of_driver");
+            query.ColumnSet = new ColumnSet("new_id_driver", "new_car_of_driver", "new_company_of_driver");
+
+            // Expand to retrieve the linked entity
+            query.LinkEntities.Add(new LinkEntity("new_drivers", "account", "new_company_of_driver", "accountid", JoinOperator.Inner));
+            query.LinkEntities[0].Columns.AddColumns("new_company_id"); // Add the column to retrieve from the linked entity
 
             EntityCollection releventDrivers = service.RetrieveMultiple(query);
 
             Entity driver = null;
-            if (releventDrivers.Entities.Count > 0)
-            {  
-               driver = 
-               releventDrivers.Entities.FirstOrDefault
-               (dr =>dr.Attributes["new_id_driver"].ToString() == driverId           //find by driver id.
-               ||
-               (dr.Attributes.Contains("new_car_of_driver") &&                       //if not be existing,
-               ((EntityReference)dr.Attributes["new_car_of_driver"]).Id == car));    // find by car.  
-
-            } 
-            if(driver is null)
+            if (releventDrivers != null && releventDrivers.Entities.Count > 0)
             {
-                return Guid.Empty;
+                driver = releventDrivers.Entities.FirstOrDefault();
             }
-            return driver.Id;
+            return driver;
         }
         private Guid FindCarByNumbur(string carNumbur)
         {
